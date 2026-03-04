@@ -100,6 +100,9 @@
 \newlength{\maxlogowidth}  % space on both sides set to maxlogowidth to keep title centered
 \setlength{\maxlogowidth}{0cm}
 
+\newlength{\bufferwidth}  % space on both sides set to maxlogowidth to keep title centered
+\setlength{\bufferwidth}{10cm}
+
 \newcommand{\logoright}[1]{
   \newcommand{\insertlogoright}{#1}
   \settowidth{\logorightwidth}{\insertlogoright}
@@ -129,7 +132,7 @@
         \vspace*{\fill}
         \else\fi
       \end{column}
-      \begin{column}{\dimexpr\paperwidth-\maxlogowidth-\maxlogowidth}
+      \begin{column}{\dimexpr\paperwidth-\maxlogowidth-\bufferwidth}
         \usebeamerfont{headline}
         \vskip3ex
         \centering
@@ -143,16 +146,16 @@
         {\usebeamerfont{headline institute}\usebeamercolor[fg]{headline institute}\insertinstitute\\[1ex]}
         \fi
       \end{column}
-      \begin{column}{\maxlogowidth}
-        \vskip5ex
-        \ifdefined\insertlogoright
-        \vspace*{\fill}
-        \raggedleft
-        \insertlogoright
-        \hspace{10ex}
-        \vspace*{\fill}
-        \else\fi
-      \end{column}
+      % \begin{column}{\maxlogowidth}
+      %   \vskip5ex
+      %   \ifdefined\insertlogoright
+      %   \vspace*{\fill}
+      %   \raggedleft
+      %   \insertlogoright
+      %   \hspace{10ex}
+      %   \vspace*{\fill}
+      %   \else\fi
+      % \end{column}
     \end{columns}
     \vspace{5ex}
     \ifbeamercolorempty[bg]{headline rule}{}{
